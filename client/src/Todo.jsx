@@ -1,14 +1,16 @@
 import { useMutation } from '@apollo/client';
-import { DELETE_TODO_BY_ID, TOGGLE_ISDONE } from './mutation';
-import { GET_ALL_TODOS } from './query';
+import { DELETE_TODO_BY_ID, TOGGLE_ISDONE } from './graphql/mutation';
+import { GET_ALL_TODOS } from './graphql/query';
 
 export const Todo = ({ data }) => {
   const [toggleIsDone, { error }] = useMutation(TOGGLE_ISDONE, {
     refetchQueries: [GET_ALL_TODOS],
   });
+
   const [deleteTodoById, { error: err }] = useMutation(DELETE_TODO_BY_ID, {
     refetchQueries: [GET_ALL_TODOS],
   });
+
   const handleClick = () => {
     try {
       toggleIsDone({ variables: { id: data.id, isDone: data.isDone } });

@@ -3,7 +3,7 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 const Query = {
-  todos: (parent, args) => {
+  todos: () => {
     return prisma.todo.findMany();
   },
 };

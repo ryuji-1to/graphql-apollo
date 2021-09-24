@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { GET_ALL_TODOS } from './query';
+import { GET_ALL_TODOS } from './graphql/query';
 import { Todo } from './Todo';
 
 export const Todos = () => {

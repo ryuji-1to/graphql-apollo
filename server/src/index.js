@@ -16,7 +16,7 @@ const typeDefs = gql`
 
   type Mutation {
     addTodo(text: String!): Todo
-    toggleIsDone(id: ID!, isDone: Boolean): Todo
+    toggleIsDone(id: ID!, isDone: Boolean!): Todo
     deleteTodoById(id: ID!): Todo
     deleteIsDoneTodos: Todo
   }

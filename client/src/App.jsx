@@ -1,8 +1,8 @@
 import './App.css';
 import { useMutation } from '@apollo/client';
 import { useState } from 'react';
-import { ADD_TODO, DELETE_ISDONE_TODOS } from './mutation';
-import { GET_ALL_TODOS } from './query';
+import { ADD_TODO, DELETE_ISDONE_TODOS } from './graphql/mutation';
+import { GET_ALL_TODOS } from './graphql/query';
 import { Todos } from './Todos';
 
 function App() {
